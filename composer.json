@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Hexlet\\Code\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marina Aldoshina",
+            "email": "aldmarinka@yandex.ru"
+        }
+    ],
+    "require": {}
+}
