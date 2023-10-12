@@ -14,7 +14,9 @@
             "email": "aldmarinka@yandex.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.21"
+    },
     "bin": [
         "bin/brain-games"
     ]
