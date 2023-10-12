@@ -1,5 +1,7 @@
 {
     "name": "hexlet/code",
+    "description": "учебная программа Hexlet",
+    "license": "proprietary",
     "type": "project",
     "autoload": {
         "psr-4": {
