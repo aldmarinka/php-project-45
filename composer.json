@@ -5,7 +5,8 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Hexlet\\Code\\": "src/"
+            "Hexlet\\Code\\": "src/",
+            "BrainGames\\Games\\": "src/Games"
         }
     },
     "authors": [
@@ -19,6 +20,7 @@
     },
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ]
 }
