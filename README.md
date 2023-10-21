@@ -11,3 +11,6 @@ https://asciinema.org/a/dY2Yn3hqFsJlcFuCGgf1MajYR
 
 ```make brain-gcd```
 https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH
+
+```make brain-progression```
+https://asciinema.org/a/STVsm1C6xKARMwbjNKNkSgHv5
