@@ -11,9 +11,9 @@ class Even implements GameInterface
         return 'Answer "yes" if the number is even, otherwise answer "no".';
     }
 
-    public function getQuestion(): int
+    public function getQuestion(): string
     {
-        return rand(1, 100);
+        return (string)rand(1, 100);
     }
 
     public function isCorrect(string $question, string $answer): bool

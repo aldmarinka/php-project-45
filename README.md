@@ -4,7 +4,10 @@
 
 Пример работы игр:
 ```make brain-even```
-https://asciinema.org/a/IDvN3ukwnX3HdBh6pbYAZnliB
+https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV
 
 ```make brain-calc```
 https://asciinema.org/a/dY2Yn3hqFsJlcFuCGgf1MajYR
+
+```make brain-gcd```
+https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH
