@@ -2,7 +2,7 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function BrainGames\Games\GCD\play;
+use function BrainGames\Games\Gcd\play;
 
 play();
 ?>
