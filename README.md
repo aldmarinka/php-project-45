@@ -2,7 +2,7 @@
 [![Actions Status](https://github.com/aldmarinka/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/aldmarinka/php-project-45/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e166f5a2abbbf14798ee/maintainability)](https://codeclimate.com/github/aldmarinka/php-project-45/maintainability)
 
-###Описание
+### Описание
 «Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. Игры:
 
 - Калькулятор. Арифметические выражения, которые необходимо вычислить.
@@ -18,7 +18,7 @@ composer
 ### Установка
 ```make install```
 
-### Запуск игра и примеры работы:
+### Запуск игры и примеры работы:
 
 #### Калькулятор
 ```make brain-calc```
@@ -32,6 +32,7 @@ composer
 
 #### Определение четного числа
 ```make brain-even```
+
 [![asciicast](https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV.svg)](https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV)
 
 #### Определение наибольшего общего делителя
