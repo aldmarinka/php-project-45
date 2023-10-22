@@ -27,9 +27,8 @@ function play(): void
     startGame(getRule(), $arGame);
 }
 
-function getAnswer(int $question): string
+function getAnswer(int $number): string
 {
-    $number = (int)$question;
     for ($i = 2; $i < $number; $i++) {
         if ($number % $i == 0) {
             return 'no';
