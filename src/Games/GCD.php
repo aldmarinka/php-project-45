@@ -2,38 +2,41 @@
 
 declare(strict_types=1);
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\GCD;
 
-class GCD implements GameInterface
+use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\getCountQuestion;
+
+function getRule(): string
 {
-    public function getRule(): string
-    {
-        return 'Find the greatest common divisor of given numbers.';
+    return 'Find the greatest common divisor of given numbers.';
+}
+
+function play(): void
+{
+    $arGame      = [];
+    $numQuestion = 0;
+
+    while ($numQuestion < getCountQuestion()) {
+        $first = rand(0, 100);
+        $second = rand(0, 100);
+
+        $question = "{$first} {$second}";
+
+        $arGame[$question] = getAnswer($first, $second);
+        $numQuestion++;
     }
 
-    public function getQuestion(): string
-    {
-        return rand(0, 100) . ' ' . rand(0, 100);
+    startGame(getRule(), $arGame);
+}
+
+function getAnswer(int $first, int $second): int
+{
+    while ($second != 0) {
+        $remainder = $first % $second;
+        $first = $second;
+        $second = $remainder;
     }
 
-    public function isCorrect(string $question, string $answer): bool
-    {
-        $correct = $this->getAnswer($question);
-        return $answer == $correct;
-    }
-
-    public function getAnswer(string $question): string
-    {
-        $expression = explode(' ', $question);
-        $first = (int)$expression[0];
-        $second = (int)$expression[1];
-
-        while ($second != 0) {
-            $remainder = $first % $second;
-            $first = $second;
-            $second = $remainder;
-        }
-
-        return (string)abs($first);
-    }
+    return abs($first);
 }

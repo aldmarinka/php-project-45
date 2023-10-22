@@ -2,28 +2,32 @@
 
 declare(strict_types=1);
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Even;
 
-class Even implements GameInterface
+use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\getCountQuestion;
+
+function getRule(): string
 {
-    public function getRule(): string
-    {
-        return 'Answer "yes" if the number is even, otherwise answer "no".';
+    return 'Answer "yes" if the number is even, otherwise answer "no".';
+}
+
+function play(): void
+{
+    $arGame      = [];
+    $numQuestion = 0;
+
+    while ($numQuestion < getCountQuestion()) {
+        $number = rand(1, 100);
+
+        $arGame[$number] = getAnswer($number);
+        $numQuestion++;
     }
 
-    public function getQuestion(): string
-    {
-        return (string)rand(1, 100);
-    }
+    startGame(getRule(), $arGame);
+}
 
-    public function isCorrect(string $question, string $answer): bool
-    {
-        $correct = $this->getAnswer($question);
-        return $answer == $correct;
-    }
-
-    public function getAnswer(string $question): string
-    {
-        return (((int)$question % 2) == 0) ? 'yes' : 'no';
-    }
+function getAnswer(int $question): string
+{
+    return (($question % 2) == 0) ? 'yes' : 'no';
 }

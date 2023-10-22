@@ -5,9 +5,16 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Hexlet\\Code\\": "src/",
-            "BrainGames\\Games\\": "src/Games"
-        }
+            "Hexlet\\Code\\": "src/"
+        },
+        "files": [
+            "src/Games/Even.php",
+            "src/Games/Calc.php",
+            "src/Games/Gcd.php",
+            "src/Games/Progression.php",
+            "src/Games/Prime.php",
+            "src/Engine.php"
+        ]
     },
     "authors": [
         {

@@ -2,18 +2,40 @@
 [![Actions Status](https://github.com/aldmarinka/php-project-45/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/aldmarinka/php-project-45/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/e166f5a2abbbf14798ee/maintainability)](https://codeclimate.com/github/aldmarinka/php-project-45/maintainability)
 
-Пример работы игр:
-```make brain-even```
-https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV
+###Описание
+«Игры разума» — набор из пяти консольных игр, построенных по принципу популярных мобильных приложений для прокачки мозга. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильные ответы завершают игру и предлагают пройти ее заново. Игры:
 
+- Калькулятор. Арифметические выражения, которые необходимо вычислить.
+- Прогрессия. Поиск пропущенных чисел в последовательности чисел.
+- Определение четного числа.
+- Определение наибольшего общего делителя.
+- Определение простого числа.
+
+###Требования:
+PHP версии 7 и выше
+composer
+
+###Установка
+```make install```
+
+###Запуск игра и примеры работы:
+
+####Калькулятор
 ```make brain-calc```
 https://asciinema.org/a/dY2Yn3hqFsJlcFuCGgf1MajYR
 
-```make brain-gcd```
-https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH
-
+####Прогрессия
 ```make brain-progression```
 https://asciinema.org/a/STVsm1C6xKARMwbjNKNkSgHv5
 
+####Определение четного числа
+```make brain-even```
+https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV
+
+####Определение наибольшего общего делителя
+```make brain-gcd```
+https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH
+
+####Определение простого числа
 ```make brain-prime```
 https://asciinema.org/a/lIiSscPaDHMARQoPol1D3PvqE

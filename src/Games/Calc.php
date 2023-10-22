@@ -2,44 +2,48 @@
 
 declare(strict_types=1);
 
-namespace BrainGames\Games;
+namespace BrainGames\Games\Calc;
 
-class Calc implements GameInterface
+use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\getCountQuestion;
+
+function getRule(): string
 {
-    public function getRule(): string
-    {
-        return 'What is the result of the expression?';
+    return 'What is the result of the expression?';
+}
+
+function play(): void
+{
+    $arGame = [];
+    $numQuestion = 0;
+
+    while ($numQuestion < getCountQuestion()) {
+        $first  = rand(0, 100);
+        $second = rand(0, 100);
+
+        switch (rand(0, 2)) {
+            case 0:
+                $symbol = '+';
+                $answer = $first + $second;
+                break;
+            case 1:
+                $symbol = '*';
+                $answer = $first * $second;
+                break;
+            case 2:
+                $symbol = '-';
+                $answer = $first - $second;
+                break;
+            default:
+                //невозможный вариант
+                return;
+        }
+
+        $question = "{$first} {$symbol} {$second}";
+        $arGame[$question] = $answer;
+
+        $numQuestion++;
     }
 
-    public function getQuestion(): string
-    {
-        $symbol = match (rand(0, 2)) {
-            0 => '+',
-            1 => '-',
-            2 => '*',
-            default => '',
-        };
-
-        return rand(0, 100) . ' ' . $symbol . ' ' . rand(0, 100);
-    }
-
-    public function isCorrect(string $question, string $answer): bool
-    {
-        $correct = $this->getAnswer($question);
-        return $answer == $correct;
-    }
-
-    public function getAnswer(string $question): string
-    {
-        $expression = explode(' ', $question);
-        $first = (int)$expression[0];
-        $second = (int)$expression[2];
-
-
-        return (string)match ($expression[1]) {
-            '+' => $first + $second,
-            '-' => $first - $second,
-            '*' => $first * $second,
-        };
-    }
+    startGame(getRule(), $arGame);
 }
