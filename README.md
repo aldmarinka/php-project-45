@@ -11,31 +11,35 @@
 - Определение наибольшего общего делителя.
 - Определение простого числа.
 
-###Требования:
+### Требования:
 PHP версии 7 и выше
 composer
 
-###Установка
+### Установка
 ```make install```
 
-###Запуск игра и примеры работы:
+### Запуск игра и примеры работы:
 
-####Калькулятор
+#### Калькулятор
 ```make brain-calc```
-https://asciinema.org/a/dY2Yn3hqFsJlcFuCGgf1MajYR
 
-####Прогрессия
+[![asciicast](https://asciinema.org/a/dY2Yn3hqFsJlcFuCGgf1MajYR.svg)](https://asciinema.org/a/dY2Yn3hqFsJlcFuCGgf1MajYR)
+
+#### Прогрессия
 ```make brain-progression```
-https://asciinema.org/a/STVsm1C6xKARMwbjNKNkSgHv5
 
-####Определение четного числа
+[![asciicast](https://asciinema.org/a/STVsm1C6xKARMwbjNKNkSgHv5.svg)](https://asciinema.org/a/STVsm1C6xKARMwbjNKNkSgHv5)
+
+#### Определение четного числа
 ```make brain-even```
-https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV
+[![asciicast](https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV.svg)](https://asciinema.org/a/KlqnqPr736MkRSGJ0ycwGZGYV)
 
-####Определение наибольшего общего делителя
+#### Определение наибольшего общего делителя
 ```make brain-gcd```
-https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH
 
-####Определение простого числа
+[![asciicast](https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH.svg)](https://asciinema.org/a/OFPv8C6Yllz8MkaVnDfFMbhDH)
+
+#### Определение простого числа
 ```make brain-prime```
-https://asciinema.org/a/lIiSscPaDHMARQoPol1D3PvqE
+
+[![asciicast](https://asciinema.org/a/lIiSscPaDHMARQoPol1D3PvqE.svg)](https://asciinema.org/a/lIiSscPaDHMARQoPol1D3PvqE)
