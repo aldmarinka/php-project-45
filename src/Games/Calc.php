@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\startGame;
-use function BrainGames\Engine\getCountQuestion;
+
+use const BrainGames\Engine\COUNT_QUESTIONS;
 
 function getRule(): string
 {
@@ -15,9 +16,8 @@ function getRule(): string
 function play(): void
 {
     $arGame = [];
-    $numQuestion = 0;
 
-    while ($numQuestion < getCountQuestion()) {
+    for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $first  = rand(0, 100);
         $second = rand(0, 100);
 
@@ -35,14 +35,11 @@ function play(): void
                 $answer = $first - $second;
                 break;
             default:
-                //невозможный вариант
-                return;
+                throw new \Exception("Неизвестная математическая операция");
         }
 
-        $question = "{$first} {$symbol} {$second}";
+        $question          = "{$first} {$symbol} {$second}";
         $arGame[$question] = $answer;
-
-        $numQuestion++;
     }
 
     startGame(getRule(), $arGame);

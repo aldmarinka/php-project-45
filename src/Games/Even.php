@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace BrainGames\Games\Even;
 
 use function BrainGames\Engine\startGame;
-use function BrainGames\Engine\getCountQuestion;
+
+use const BrainGames\Engine\COUNT_QUESTIONS;
 
 function getRule(): string
 {
@@ -15,13 +16,11 @@ function getRule(): string
 function play(): void
 {
     $arGame      = [];
-    $numQuestion = 0;
 
-    while ($numQuestion < getCountQuestion()) {
+    for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $number = rand(1, 100);
 
         $arGame[$number] = getAnswer($number);
-        $numQuestion++;
     }
 
     startGame(getRule(), $arGame);

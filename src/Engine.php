@@ -9,12 +9,7 @@ use function cli\prompt;
 
 const COUNT_QUESTIONS = 3;
 
-function getCountQuestion(): int
-{
-    return COUNT_QUESTIONS;
-}
-
-function startGame(string $rule, array $arGame): void
+function startGame(string $rule, array $gameRound): void
 {
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
@@ -22,7 +17,7 @@ function startGame(string $rule, array $arGame): void
 
     line($rule);
 
-    foreach ($arGame as $roundQuestion => $roundAnswer) {
+    foreach ($gameRound as $roundQuestion => $roundAnswer) {
         $userAnswer = prompt('Question: ' . $roundQuestion);
         line("Your answer: %s", $userAnswer);
 
@@ -37,6 +32,4 @@ function startGame(string $rule, array $arGame): void
     }
 
     line("Congratulations, %s!", $name);
-
-    return;
 }

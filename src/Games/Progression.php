@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\startGame;
-use function BrainGames\Engine\getCountQuestion;
+
+use const BrainGames\Engine\COUNT_QUESTIONS;
 
 function getRule(): string
 {
@@ -15,9 +16,8 @@ function getRule(): string
 function play(): void
 {
     $arGame      = [];
-    $numQuestion = 0;
 
-    while ($numQuestion < getCountQuestion()) {
+    for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         // Генерируем случайную длину прогрессии от 5 до 10 чисел
         $length = rand(5, 10);
 
@@ -32,10 +32,10 @@ function play(): void
 
         $progression   = [];
         $hiddenElement = 0;
-        for ($i = 0; $i < $length; $i++) {
-            $element = $firstElement + $i * $step;
+        for ($j = 0; $j < $length; $j++) {
+            $element = $firstElement + $j * $step;
 
-            if ($i == $hiddenNumber) {
+            if ($j == $hiddenNumber) {
                 $hiddenElement = $element;
 
                 $element = '..';
@@ -46,7 +46,6 @@ function play(): void
         $strProgression = implode(' ', $progression);
 
         $arGame[$strProgression] = $hiddenElement;
-        $numQuestion++;
     }
 
     startGame(getRule(), $arGame);
