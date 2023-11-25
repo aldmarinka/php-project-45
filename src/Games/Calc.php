@@ -24,11 +24,10 @@ function play(): void
         $operations = ['+', '*', '-'];
         $symbol = $operations[array_rand($operations)];
 
-        $answer     = match ($symbol) {
+        $answer = match ($symbol) {
             '+' => $first + $second,
             '*' => $first * $second,
-            '-' => $first - $second,
-            default => throw new \Exception("Неизвестная математическая операция"),
+            '-' => $first - $second
         };
 
         $question          = "{$first} {$symbol} {$second}";
