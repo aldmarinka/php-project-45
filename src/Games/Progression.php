@@ -31,19 +31,14 @@ function play(): void
         $hiddenNumber = rand(0, $length - 1);
 
         $progression   = [];
-        $hiddenElement = 0;
         for ($j = 0; $j < $length; $j++) {
-            $element = $firstElement + $j * $step;
-
-            if ($j == $hiddenNumber) {
-                $hiddenElement = $element;
-
-                $element = '..';
-            }
-            $progression[] = $element;
+            $progression[] = $firstElement + $j * $step;
         }
 
-        $strProgression = implode(' ', $progression);
+        $hiddenElement = $progression[$hiddenNumber];
+        $progression[$hiddenNumber] = '..';
+
+        $strProgression = implode('  ', $progression);
 
         $arGame[$strProgression] = $hiddenElement;
     }

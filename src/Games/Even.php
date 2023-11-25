@@ -20,13 +20,13 @@ function play(): void
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $number = rand(1, 100);
 
-        $arGame[$number] = getAnswer($number);
+        $arGame[$number] = inEven($number);
     }
 
     startGame(getRule(), $arGame);
 }
 
-function getAnswer(int $question): string
+function inEven(int $question): string
 {
     return (($question % 2) == 0) ? 'yes' : 'no';
 }

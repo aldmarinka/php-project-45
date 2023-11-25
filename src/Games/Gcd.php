@@ -23,13 +23,13 @@ function play(): void
 
         $question = "{$first} {$second}";
 
-        $arGame[$question] = getAnswer($first, $second);
+        $arGame[$question] = getGcd($first, $second);
     }
 
     startGame(getRule(), $arGame);
 }
 
-function getAnswer(int $first, int $second): int
+function getGcd(int $first, int $second): int
 {
     while ($second != 0) {
         $remainder = $first % $second;

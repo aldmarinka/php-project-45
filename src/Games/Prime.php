@@ -20,14 +20,18 @@ function play(): void
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $number = rand(1, 100);
 
-        $arGame[$number] = getAnswer($number);
+        $arGame[$number] = isPrime($number);
     }
 
     startGame(getRule(), $arGame);
 }
 
-function getAnswer(int $number): string
+function isPrime(int $number): string
 {
+    if ($number === 1) {
+        return 'no';
+    }
+
     for ($i = 2; $i < $number; $i++) {
         if ($number % $i == 0) {
             return 'no';

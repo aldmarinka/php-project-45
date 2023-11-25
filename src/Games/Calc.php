@@ -15,32 +15,25 @@ function getRule(): string
 
 function play(): void
 {
-    $arGame = [];
+    $gameRounds = [];
 
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $first  = rand(0, 100);
         $second = rand(0, 100);
 
-        switch (rand(0, 2)) {
-            case 0:
-                $symbol = '+';
-                $answer = $first + $second;
-                break;
-            case 1:
-                $symbol = '*';
-                $answer = $first * $second;
-                break;
-            case 2:
-                $symbol = '-';
-                $answer = $first - $second;
-                break;
-            default:
-                throw new \Exception("Неизвестная математическая операция");
-        }
+        $operations = ['+', '*', '-'];
+        $symbol = $operations[array_rand($operations)];
+
+        $answer     = match ($symbol) {
+            '+' => $first + $second,
+            '*' => $first * $second,
+            '-' => $first - $second,
+            default => throw new \Exception("Неизвестная математическая операция"),
+        };
 
         $question          = "{$first} {$symbol} {$second}";
-        $arGame[$question] = $answer;
+        $gameRounds[$question] = $answer;
     }
 
-    startGame(getRule(), $arGame);
+    startGame(getRule(), $gameRounds);
 }
