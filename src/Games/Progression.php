@@ -38,7 +38,7 @@ function play(): void
         $hiddenElement = $progression[$hiddenNumber];
         $progression[$hiddenNumber] = '..';
 
-        $strProgression = implode('  ', $progression);
+        $strProgression = implode(' ', $progression);
 
         $arGame[$strProgression] = $hiddenElement;
     }
