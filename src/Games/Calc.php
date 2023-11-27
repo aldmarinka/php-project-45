@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace BrainGames\Games\Calc;
 
+use Exception;
+
 use function BrainGames\Engine\startGame;
 
 use const BrainGames\Engine\COUNT_QUESTIONS;
@@ -28,7 +30,7 @@ function play(): void
             '+' => $first + $second,
             '*' => $first * $second,
             '-' => $first - $second,
-            default => throw new \Exception("Неизвестная математическая операция"),
+            default => (throw new Exception("Неизвестная математическая операция")),
         };
 
         $question          = "{$first} {$symbol} {$second}";

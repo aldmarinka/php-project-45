@@ -20,23 +20,23 @@ function play(): void
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $number = rand(1, 100);
 
-        $gameRounds[$number] = isPrime($number);
+        $gameRounds[$number] = isPrime($number) ? 'yes' : 'no';
     }
 
     startGame(getRule(), $gameRounds);
 }
 
-function isPrime(int $number): string
+function isPrime(int $number): bool
 {
     if ($number === 1) {
-        return 'no';
+        return false;
     }
 
     for ($i = 2; $i < $number; $i++) {
         if ($number % $i == 0) {
-            return 'no';
+            return false;
         }
     }
 
-    return 'yes';
+    return true;
 }
