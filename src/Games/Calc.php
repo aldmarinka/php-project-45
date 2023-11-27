@@ -27,7 +27,8 @@ function play(): void
         $answer = match ($symbol) {
             '+' => $first + $second,
             '*' => $first * $second,
-            '-' => $first - $second
+            '-' => $first - $second,
+            default => throw new \Exception("Неизвестная математическая операция"),
         };
 
         $question          = "{$first} {$symbol} {$second}";

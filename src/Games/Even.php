@@ -15,18 +15,18 @@ function getRule(): string
 
 function play(): void
 {
-    $arGame      = [];
+    $gameRounds      = [];
 
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $number = rand(1, 100);
 
-        $arGame[$number] = inEven($number);
+        $gameRounds[$number] = isEven($number) ? 'yes' : 'no';
     }
 
-    startGame(getRule(), $arGame);
+    startGame(getRule(), $gameRounds);
 }
 
-function inEven(int $question): string
+function isEven(int $question): bool
 {
-    return (($question % 2) == 0) ? 'yes' : 'no';
+    return (($question % 2) == 0);
 }

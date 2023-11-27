@@ -15,7 +15,7 @@ function getRule(): string
 
 function play(): void
 {
-    $arGame      = [];
+    $gameRounds      = [];
 
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $first = rand(0, 100);
@@ -23,10 +23,10 @@ function play(): void
 
         $question = "{$first} {$second}";
 
-        $arGame[$question] = getGcd($first, $second);
+        $gameRounds[$question] = getGcd($first, $second);
     }
 
-    startGame(getRule(), $arGame);
+    startGame(getRule(), $gameRounds);
 }
 
 function getGcd(int $first, int $second): int

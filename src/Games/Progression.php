@@ -15,19 +15,12 @@ function getRule(): string
 
 function play(): void
 {
-    $arGame      = [];
+    $gameRounds      = [];
 
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
-        // Генерируем случайную длину прогрессии от 5 до 10 чисел
         $length = rand(5, 10);
-
-        // Генерируем случайный первый элемент прогрессии
         $firstElement = rand(1, 10);
-
-        // Генерируем случайный шаг прогрессии
         $step = rand(1, 5);
-
-        // Генерируем случайный номер, который заменим точками
         $hiddenNumber = rand(0, $length - 1);
 
         $progression   = [];
@@ -40,8 +33,8 @@ function play(): void
 
         $strProgression = implode(' ', $progression);
 
-        $arGame[$strProgression] = $hiddenElement;
+        $gameRounds[$strProgression] = $hiddenElement;
     }
 
-    startGame(getRule(), $arGame);
+    startGame(getRule(), $gameRounds);
 }

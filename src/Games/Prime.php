@@ -15,15 +15,15 @@ function getRule(): string
 
 function play(): void
 {
-    $arGame      = [];
+    $gameRounds      = [];
 
     for ($i = 0; $i < COUNT_QUESTIONS; $i++) {
         $number = rand(1, 100);
 
-        $arGame[$number] = isPrime($number);
+        $gameRounds[$number] = isPrime($number);
     }
 
-    startGame(getRule(), $arGame);
+    startGame(getRule(), $gameRounds);
 }
 
 function isPrime(int $number): string
