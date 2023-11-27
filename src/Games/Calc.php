@@ -26,12 +26,19 @@ function play(): void
         $operations = ['+', '*', '-'];
         $symbol = $operations[array_rand($operations)];
 
-        $answer = match ($symbol) {
-            '-' => $first - $second,
-            '+' => $first + $second,
-            '*' => $first * $second,
-            default => throw new Exception("Неизвестная математическая операция"),
-        };
+        switch ($symbol) {
+            case '+':
+                $answer = $first + $second;
+                break;
+            case '*':
+                $answer = $first * $second;
+                break;
+            case '-':
+                $answer = $first - $second;
+                break;
+            default:
+                throw new \Exception("Неизвестная математическая операция");
+        }
 
         $question          = "{$first} {$symbol} {$second}";
         $gameRounds[$question] = $answer;
