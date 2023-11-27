@@ -27,10 +27,10 @@ function play(): void
         $symbol = $operations[array_rand($operations)];
 
         $answer = match ($symbol) {
+            '-' => $first - $second,
             '+' => $first + $second,
             '*' => $first * $second,
-            '-' => $first - $second,
-            default => (throw new Exception("Неизвестная математическая операция")),
+            default => throw new Exception("Неизвестная математическая операция"),
         };
 
         $question          = "{$first} {$symbol} {$second}";
